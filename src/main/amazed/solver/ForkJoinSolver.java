@@ -2,12 +2,8 @@ package amazed.solver;
 
 import amazed.maze.Maze;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Set;
-import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.*;
+import java.util.concurrent.*;
 
 /**
  * <code>ForkJoinSolver</code> implements a solver for
@@ -20,8 +16,14 @@ import java.util.concurrent.ConcurrentSkipListSet;
 
 
 public class ForkJoinSolver
-    extends SequentialSolver
+    extends amazed.solver.SequentialSolver 
 {
+    Maze maze;
+    static Set<Integer> visited = new ConcurrentSkipListSet();
+    Set<ForkJoinSolver> treds = new ConcurrentSkipListSet<>();
+    Deque<Integer> frunt = new ConcurrentLinkedDeque<>();
+    Map<Integer, Integer> pred = new ConcurrentSkipListMap<>();
+
     /**
      * Creates a solver that searches in <code>maze</code> from the
      * start node to a goal.
@@ -31,6 +33,7 @@ public class ForkJoinSolver
     public ForkJoinSolver(Maze maze)
     {
         super(maze);
+        this.maze = maze;
     }
 
     /**
@@ -69,6 +72,6 @@ public class ForkJoinSolver
 
     private List<Integer> parallelSearch()
     {
-        return null;
+        return
     }
 }
