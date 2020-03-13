@@ -6,7 +6,7 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
 import amazed.solver.SequentialSolver;
-import main.amazed.solver.ForkJoinSolver;
+import amazed.solver.ForkJoinSolver;
 
 /**
  * <code>Amazed</code> is a simple application class that applies a
@@ -43,7 +43,7 @@ public class Amazed
      *                         which a parallel task is forked; this value
      *                         is passed to the instance of the solver as
      *                         described in
-     *                         {@link ForkJoinSolver#ForkJoinSolver(Maze, int)}
+     *                         {@link amazed.solver.ForkJoinSolver#ForkJoinSolver(Maze, int)}
      * @param animationDelay   milliseconds of pause between a step and
      *                         the next one in the animation of the
      *                         solution search; if
